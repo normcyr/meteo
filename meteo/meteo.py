@@ -33,6 +33,8 @@ def faire_appel(url_appel):
 
     if reponse.status_code == 200:
         donnees_json = json.loads(reponse.text)
+        with open('donnees_actuelles.json', 'w') as f_sortie:
+            json.dump(donnees_json, f_sortie, indent = 4)
         return(donnees_json)
 
     else:
@@ -41,6 +43,8 @@ def faire_appel(url_appel):
 
 def conditions_actuelles(donnees_json):
 
+    ville = donnees_json['name']
+    pays = donnees_json['sys']['country']
     heure_actuelle = time.strftime("%H:%M", time.localtime(donnees_json['dt']))
     meteo_actuelle = donnees_json['weather'][0]['description']
     temp_actuelle = donnees_json['main']['temp']
@@ -48,6 +52,7 @@ def conditions_actuelles(donnees_json):
     pression_actuelle = donnees_json['main']['pressure']
     vent_actuel = donnees_json['wind']['speed']
 
+    print('Ville: {}, {}'.format(ville, pays))
     print('Heure: {}'.format(heure_actuelle))
     print('Météo: {}'.format(meteo_actuelle))
     print('Température: {} °C'.format(round(temp_actuelle-273.15, 1)))
