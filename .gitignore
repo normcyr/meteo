@@ -13,3 +13,6 @@ develop-eggs
 
 # Compiled python modules.
 *.pyc
+
+# results
+*.json
