@@ -23,6 +23,7 @@ def lire_config(fichier_config):
 def creer_url_appel(url_base, id_ville, cle_api, langue):
 
     url_appel = url_base + '&id=' + id_ville + '&lang=' + langue + '&APPID=' + cle_api
+    print(url_appel)
 
     return(url_appel)
 
@@ -30,6 +31,7 @@ def creer_url_appel(url_base, id_ville, cle_api, langue):
 def faire_appel(url_appel):
 
     reponse = requests.get(url_appel)
+    reponse.encoding = 'utf-8'
 
     if reponse.status_code == 200:
         donnees_json = json.loads(reponse.text)
@@ -79,6 +81,7 @@ if __name__ == '__main__':
     donnees_json = faire_appel(url_appel)
 
     # seulement pour les tests, utiliser le fichier local au lieu de faire un appel
+    #
     # fichier_json = 'weather.json'
     # donnees_json = lire_fichier_json(fichier_json)
 
