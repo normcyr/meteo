@@ -9,7 +9,7 @@ import time
 
 def lire_config(fichier_config):
 
-    with open('config.yml', 'r') as f:
+    with open(fichier_config, 'r') as f:
         config = yaml.safe_load(f)
 
     url_base = config['url_base']
@@ -23,7 +23,7 @@ def lire_config(fichier_config):
 def creer_url_appel(url_base, id_ville, cle_api, langue):
 
     url_appel = url_base + '&id=' + id_ville + '&lang=' + langue + '&APPID=' + cle_api
-    print(url_appel)
+    #print(url_appel)
 
     return(url_appel)
 
@@ -73,7 +73,7 @@ def lire_fichier_json(fichier_json):
 
 if __name__ == '__main__':
 
-    fichier_config = 'config.yml'
+    fichier_config = 'meteo/config.yml'
 
     url_base, id_ville, cle_api, langue = lire_config(fichier_config)
     url_appel = creer_url_appel(url_base, id_ville, cle_api, langue)

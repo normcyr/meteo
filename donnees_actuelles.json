@@ -1,0 +1,54 @@
+{
+    "weather": [
+        {
+            "icon": "09n",
+            "main": "Drizzle",
+            "id": 300,
+            "description": "bruine l\u00e9g\u00e8re"
+        },
+        {
+            "icon": "50n",
+            "main": "Mist",
+            "id": 701,
+            "description": "brume"
+        },
+        {
+            "icon": "50n",
+            "main": "Fog",
+            "id": 741,
+            "description": "brouillard"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 273.8,
+        "humidity": 100,
+        "pressure": 1013,
+        "temp_max": 274.15,
+        "temp_min": 273.15
+    },
+    "cod": 200,
+    "id": 5905868,
+    "wind": {
+        "speed": 2.1,
+        "deg": 30
+    },
+    "name": "Bordeaux",
+    "clouds": {
+        "all": 90
+    },
+    "dt": 1543195800,
+    "visibility": 4023,
+    "coord": {
+        "lon": -73.69,
+        "lat": 45.54
+    },
+    "sys": {
+        "type": 1,
+        "sunrise": 1543234117,
+        "country": "CA",
+        "sunset": 1543266916,
+        "message": 0.0055,
+        "id": 3829
+    }
+}
